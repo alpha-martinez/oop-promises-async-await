@@ -150,3 +150,42 @@ fetch('https://api.github.com/users/alpha-martinez')
    let alpha = new GithubProfile(githubUsername, githubName, githubURL);
    alpha.intro();
 })
+
+
+
+let isMomHappy = true;
+
+// // Promise
+// let willIGetNewPhone = new Promise(
+//     function (resolve, reject) {
+//         if (isMomHappy) {
+//             let phone = {
+//                 brand: 'Samsung',
+//                 color: 'black'
+//             };
+//             resolve(phone); // fulfilled
+//         } else {
+//             var reason = new Error('mom is not happy');
+//             reject(reason); // reject
+//         }
+
+//     }
+// );
+
+// willIGetNewPhone.then(result => {
+//     console.log(result); //result is the answer from the promise. we created a new variable for it 
+// })
+//console.log(willIGetNewPhone);
+
+let willIGetNewPhone = new Promise(resolve, reject) => {
+    if(isMomHappy) {
+        const phone = {
+            brand: 'iPhone',
+            color: 'red'
+        }
+        resolve(phone);
+    } else {
+        reject('no phone');
+    }
+    
+}
